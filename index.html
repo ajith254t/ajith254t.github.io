@@ -409,7 +409,7 @@ section {
   transform: scale(1.05);
 }
 
-/* PROJECTS SECTION */
+/* PROJECTS SECTION - FIXED ALIGNMENT */
 .projects-grid {
   display: grid;
   gap: 60px;
@@ -423,14 +423,7 @@ section {
   position: relative;
 }
 
-.project-card:nth-child(even) {
-  direction: rtl;
-}
-
-.project-card:nth-child(even) > * {
-  direction: ltr;
-}
-
+/* Remove alternating direction - keep all projects with same alignment */
 .project-image {
   position: relative;
   border-radius: 8px;
@@ -446,6 +439,12 @@ section {
   transform: scale(1.02);
   border-color: var(--accent);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-placeholder {
@@ -506,6 +505,7 @@ section {
 .project-links {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .project-link {
@@ -640,10 +640,6 @@ footer {
   
   .project-card {
     grid-template-columns: 1fr;
-  }
-  
-  .project-card:nth-child(even) {
-    direction: ltr;
   }
   
   .skills-grid {
@@ -785,7 +781,7 @@ leadership qualities and continuously growing through adaptability and effective
     <!-- PROJECT 1 : VULFI -->
     <div class="project-card fade-in">
       <div class="project-image">
-        <img src="vulfi.png" alt="VULFI Vulnerability Finding Platform" style="width:100%; height:100%; object-fit:cover;">
+        <img src="vulfi.png" alt="VULFI Vulnerability Finding Platform">
       </div>
 
       <div class="project-content">
@@ -816,14 +812,8 @@ leadership qualities and continuously growing through adaptability and effective
         </div>
 
         <div class="project-links">
-          <a href="https://github.com/ajith254t/VULFI" target="_blank" class="project-link">
-            <span>→</span> GitHub (Main Repo)
-          </a>
-          <a href="https://github.com/ajith254t/VULFI--Vulnerability-Finding-Platform" target="_blank" class="project-link">
+           <a href="https://github.com/ajith254t/VULFI--Vulnerability-Finding-Platform" target="_blank" class="project-link">
             <span>→</span> GitHub (Full Project)
-          </a>
-          <a href="https://vulfi.vercel.app" target="_blank" class="project-link">
-            <span>→</span> Live Demo
           </a>
         </div>
       </div>
@@ -832,7 +822,7 @@ leadership qualities and continuously growing through adaptability and effective
     <!-- PROJECT 2 : SMART REMINDER -->
     <div class="project-card fade-in">
       <div class="project-image">
-        <img src="git.jpeg" alt="Smart Reminder System" style="width:100%; height:100%; object-fit:cover;">
+        <img src="git.jpeg" alt="Smart Reminder System">
       </div>
 
       <div class="project-content">
@@ -992,4 +982,3 @@ setTimeout(() => {
 
 </body>
 </html>
-
